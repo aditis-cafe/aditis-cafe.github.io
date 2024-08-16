@@ -11,7 +11,7 @@
         r=o.createElement('script');r.async=1;
         r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
         a.appendChild(r);
-    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');</script></head><body><div class="container container--center"><div id="countdown"></div><header class="header"><div class="header__logo"><a class="logo" href="https://aditis.cafe/"><img src="https://aditis.cafe/media/website/Untitled_design_6_-removebg-preview-2.png" alt="Aditi&#x27;s Cafe" width="500" height="500"></a></div></header><main class="content"><div class="hero framed"><h2 class="align-center">coffee</h2><p class="align-center">is good</p><p class="align-center"> </p><h4 class="align-center">september 28, 2024</h4><h5 class="align-center">maya bazaar, jayamahal palace exhibition center, bangalore</h5><p class="align-center"> </p><h1 class="align-center">Aditi's Cafe</h1></div><div class="posts"></div></main><footer class="footer"><div class="footer__inner"><div class="footer__copyright"><p class="align-center">stay tuned</p></div></div></footer></div><script defer="defer" src="https://aditis.cafe/assets/js/scripts.min.js?v=74fad06980c30243d91d72c7c57fcdb8"></script><script>window.publiiThemeMenuConfig={mobileMenuMode:'sidebar',animationSpeed:300,submenuWidth: 'auto',doubleClickTime:500,mobileMenuExpandableSubmenus:true,relatedContainerForOverlayMenuSelector:'.top'};</script><script>var images = document.querySelectorAll('img[loading]');
+    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');</script></head><body><div class="container container--center"><header class="header"><div class="header__logo"><a class="logo" href="https://aditis.cafe/"><img src="https://aditis.cafe/media/website/Untitled_design_6_-removebg-preview-2.png" alt="Aditi&#x27;s Cafe" width="500" height="500"></a></div></header><main class="content"><div class="hero framed"><h2 class="align-center">coffee</h2><p class="align-center">is good</p><p class="align-center"> </p><h4 class="align-center">september 28, 2024</h4><h5 class="align-center">maya bazaar, jayamahal palace exhibition center, bangalore</h5><p class="align-center"> </p><h1 class="align-center">Aditi's Cafe</h1></div><div class="posts"></div></main><footer class="footer"><div class="footer__inner"><div class="footer__copyright"><p class="align-center">stay tuned</p></div></div></footer></div><script defer="defer" src="https://aditis.cafe/assets/js/scripts.min.js?v=74fad06980c30243d91d72c7c57fcdb8"></script><script>window.publiiThemeMenuConfig={mobileMenuMode:'sidebar',animationSpeed:300,submenuWidth: 'auto',doubleClickTime:500,mobileMenuExpandableSubmenus:true,relatedContainerForOverlayMenuSelector:'.top'};</script><script>var images = document.querySelectorAll('img[loading]');
         for (var i = 0; i < images.length; i++) {
             if (images[i].complete) {
                 images[i].classList.add('is-loaded');
@@ -20,4 +20,67 @@
                     this.classList.add('is-loaded');
                 }, false);
             }
-        }</script><div id="countdown"></div></body></html>
+        }</script><style>#countdown {
+                font-size: 20px;
+                font-weight: bold;
+                text-align: center;
+                margin: 20px 0;
+            }
+
+            .floating {
+                position: fixed;
+                z-index: 1000; /* Ensure it's above other content */
+            }
+            .top-right {
+                top: 10px;
+                right: 10px;
+            }
+            .top-center {
+                top: 10px;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+            .top-left {
+                top: 10px;
+                left: 10px;
+            }
+            .bottom-right {
+                bottom: 10px;
+                right: 10px;
+            }
+            .bottom-center {
+                bottom: 10px;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+            .bottom-left {
+                bottom: 10px;
+                left: 10px;
+            }</style><script>const timerDiv = document.createElement('div');
+                timerDiv.id = "countdown";
+                timerDiv.className = "bottom-center";
+                timerDiv.classList.add("floating");
+                document.body.appendChild(timerDiv);
+                (function() {
+                    const targetDate = 1727490600000;
+                    const combinedDateTime = "2024-09-28T08:00+05:30";
+                    function updateTimer() {
+                        const now = new Date().getTime();
+                        var remaining = targetDate - now;
+
+                        if (remaining <= 0) {
+                            remaining = 0;
+                        }
+
+                        const days = Math.floor(remaining / (1000 * 60 * 60 * 24));
+                        const hours = Math.floor((remaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                        const minutes = Math.floor((remaining % (1000 * 60 * 60)) / (1000 * 60));
+                        const seconds = Math.floor((remaining % (1000 * 60)) / 1000);
+
+                        document.getElementById("countdown").innerHTML =
+                            `${days}d ${hours}h ${minutes}m ${seconds}s`;
+                    }
+
+                    const timerInterval = setInterval(updateTimer, 1000);
+                    updateTimer();
+                })();</script></body></html>
