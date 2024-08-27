@@ -81,6 +81,10 @@
                 timerDiv.appendChild(timeDiv);
                 document.body.appendChild(timerDiv);
 
+                if ("undefined" == "home" && window.location.pathname != '/') {
+                    timerDiv.style.display = "none";
+                }
+
                 // Ensure responsiveness
                 window.addEventListener('resize', function() {
                     const containerWidth = timerDiv.offsetWidth;
