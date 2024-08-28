@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="en-gb"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Error 404 - Aditi&#x27;s Cafe</title><meta name="robots" content="noindex, follow"><meta name="generator" content="Publii Open-Source CMS for Static Site"><link rel="alternate" type="application/atom+xml" href="https://aditis.cafe/feed.xml"><link rel="alternate" type="application/json" href="https://aditis.cafe/feed.json"><meta property="og:title" content="Aditi's Cafe"><meta property="og:image" content="https://aditis.cafe/media/website/IMG_0205.PNG"><meta property="og:image:width" content="3000"><meta property="og:image:height" content="3000"><meta property="og:site_name" content="Aditi's Cafe"><meta property="og:description" content=""><meta property="og:url" content="https://aditis.cafe/blog/"><meta property="og:type" content="website"><link rel="shortcut icon" href="https://aditis.cafe/media/website/IMG_0205.ico" type="image/x-icon"><link rel="preload" href="https://aditis.cafe/assets/dynamic/fonts/jetbrainsmono/jetbrainsmono.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="https://aditis.cafe/assets/dynamic/fonts/jetbrainsmono/jetbrainsmono-italic.woff2" as="font" type="font/woff2" crossorigin><link rel="stylesheet" href="https://aditis.cafe/assets/css/style.css?v=23bb6fe10c3960da0ebd9def6bce6aa7"><script type="application/ld+json">{"@context":"http://schema.org","@type":"Organization","name":"Aditi's Cafe","logo":"https://aditis.cafe/media/website/IMG_0205.PNG","url":"https://aditis.cafe/"}</script><noscript><style>img[loading] {
+<!DOCTYPE html><html lang="en-gb"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Error 404 - Aditi&#x27;s Cafe</title><meta name="robots" content="noindex, follow"><meta name="generator" content="Publii Open-Source CMS for Static Site"><link rel="alternate" type="application/atom+xml" href="https://aditis.cafe/feed.xml"><link rel="alternate" type="application/json" href="https://aditis.cafe/feed.json"><meta property="og:title" content="Aditi's Cafe"><meta property="og:image" content="https://aditis.cafe/media/website/IMG_0205.PNG"><meta property="og:image:width" content="3000"><meta property="og:image:height" content="3000"><meta property="og:site_name" content="Aditi's Cafe"><meta property="og:description" content=""><meta property="og:url" content="https://aditis.cafe/blog/"><meta property="og:type" content="website"><link rel="shortcut icon" href="https://aditis.cafe/media/website/IMG_0205.ico" type="image/x-icon"><link rel="preload" href="https://aditis.cafe/assets/dynamic/fonts/jetbrainsmono/jetbrainsmono.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="https://aditis.cafe/assets/dynamic/fonts/jetbrainsmono/jetbrainsmono-italic.woff2" as="font" type="font/woff2" crossorigin><link rel="stylesheet" href="https://aditis.cafe/assets/css/style.css?v=cf869bc5f7fcdad3424434ebd1d895e9"><script type="application/ld+json">{"@context":"http://schema.org","@type":"Organization","name":"Aditi's Cafe","logo":"https://aditis.cafe/media/website/IMG_0205.PNG","url":"https://aditis.cafe/"}</script><noscript><style>img[loading] {
                     opacity: 1;
                 }</style></noscript><script async src="https://www.googletagmanager.com/gtag/js?id=G-KZPCQQ9Y6E"></script><script>window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
@@ -20,7 +20,49 @@
                     this.classList.add('is-loaded');
                 }, false);
             }
-        }</script><style>.floating {
+        }</script><script>document.addEventListener('DOMContentLoaded', function () {
+        // Select all elements with class 'navigation-image'
+        const navigationImages = document.querySelectorAll('.navigation-image');
+
+        // Add click event listener to each element
+        navigationImages.forEach(image => {
+            image.addEventListener('click', function () {
+                try {
+                    // Retrieve the next URL from the data attribute
+                    const nextUrl = this.getAttribute('data-nexturl');
+    				console.log("---", nextUrl);
+
+                    // Basic validation for URL
+                    if (!nextUrl) {
+                        throw new Error('No URL provided in data-nexturl attribute.');
+                    }
+
+                    // Validate the URL format
+                    if (!isValidUrl(nextUrl)) {
+                        throw new Error('The URL provided is not valid.');
+                    }
+
+                    // Navigate to the specified URL
+                    window.location.href = nextUrl;
+
+                } catch (error) {
+                    // Handle any errors that occur during the process
+                    console.error('Error:', error.message);
+                    alert(`Navigation failed: ${error.message}`);
+                }
+            });
+        });
+
+        // Function to validate URL format
+        function isValidUrl(url) {
+            try {
+                new URL(url, window.location.href); // Will work for both relative and absolute URLs
+                return true;
+            } catch (_) {
+                return false;
+            }
+        }
+    });</script><style>.floating {
                 position: fixed;
                 z-index: 1000; /* Ensure it's above other content */
             }
