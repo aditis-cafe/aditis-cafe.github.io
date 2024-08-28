@@ -119,6 +119,14 @@
 
                 timerDiv.appendChild(textDiv);
                 timerDiv.appendChild(timeDiv);
+                
+                // Check if showOn is "home" and set display to none if not on home page
+                if ("home" === "home") {
+                    if (window.location.pathname !== "/") {
+                        timerDiv.style.display = "none";
+                    }
+                }
+
                 document.body.appendChild(timerDiv);
 
                 // Ensure responsiveness
